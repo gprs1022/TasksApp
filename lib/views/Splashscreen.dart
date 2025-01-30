@@ -18,7 +18,7 @@ class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 4), () {
+    Timer(Duration(seconds: 8), () {
       Get.offNamed(AppRoutes.onboardingScreen);
       // Navigate to Home
     });

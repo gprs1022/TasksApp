@@ -8,8 +8,8 @@ class FirebaseServices {
   static Future<List<Map<String, dynamic>>> getUserTasks(String userId) async {
     try {
       QuerySnapshot querySnapshot =
-          await _firestore.collection(tasksCollection).where("userId", isEqualTo: userId)
-              .get();
+      await _firestore.collection(tasksCollection).where("userId", isEqualTo: userId)
+          .get();
       return querySnapshot.docs
           .map((doc) => doc.data() as Map<String, dynamic>)
           .toList();
@@ -23,7 +23,7 @@ class FirebaseServices {
   static Future<Map<String, dynamic>?> getTaskById(String taskId) async {
     try {
       DocumentSnapshot documentSnapshot =
-          await _firestore.collection(tasksCollection).doc(taskId).get();
+      await _firestore.collection(tasksCollection).doc(taskId).get();
       return documentSnapshot.exists
           ? documentSnapshot.data() as Map<String, dynamic>
           : null;
